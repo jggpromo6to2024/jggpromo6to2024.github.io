@@ -53,12 +53,12 @@ function showDialog(message) {
         document.body.removeChild(dialogContainer);
     });
 }
-  // Función para verificar si el dispositivo es móvil
-  function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-}
+  // Función para verificar si el dispositivo es un teléfono móvil
+    function isMobileDevice() {
+        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    }
 
-// Redirigir si es un dispositivo móvil
-if (isMobileDevice()) {
-    window.location.href = "te.html";
-}
+    // Redirigir si no es un dispositivo móvil
+    if (!isMobileDevice()) {
+        window.location.href = "pagina-no-disponible.html"; // Cambia "pagina-no-disponible.html" por la URL de la página de redirección
+    }
